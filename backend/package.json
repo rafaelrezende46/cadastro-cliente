@@ -36,7 +36,7 @@
     "prestart": "npm run build",
     "start": "node .",
     "dev": "nodemon",
-    "dev:debug": "node -r ts-node/register --inspect=5858 src/index.ts",
+    "debug": "node -r ts-node/register --inspect=5858 src/index.ts",
     "test": "jest",
     "dev:tdd": "node --inspect=5859 node_modules/.bin/jest --runInBand --watch"
   },

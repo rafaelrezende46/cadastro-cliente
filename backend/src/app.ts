@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
 import express from "express";
 import { Routes } from "./routes";
+import clientesRouter from "./clientes/routes";
 
 class App {
   public app: express.Application;
@@ -9,7 +10,8 @@ class App {
   constructor() {
     this.app = express();
     this.config();
-    this.routePrv.routes(this.app);
+    // this.routePrv.routes(this.app);
+    this.app.use('/clientes', clientesRouter);
   }
 
   private config(): void {
