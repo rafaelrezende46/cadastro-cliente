@@ -1,0 +1,124 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "cadastro-cliente",
+  "collectionId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+  "dateExported": "2024-09-07T22:13:20.785Z",
+  "version": "1.2",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "0ec7333d-8ce9-45b8-a28c-66fbb44b5dd5",
+      "colId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+      "containerId": "",
+      "name": "listar clientes",
+      "url": "clientes?pagina=1&paginaTamanho=20&pesquisa",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2024-09-04T20:36:03.606Z",
+      "modified": "2024-09-06T17:53:00.827Z",
+      "headers": [],
+      "params": [
+        {
+          "name": "pagina",
+          "value": "1",
+          "isPath": false
+        },
+        {
+          "name": "paginaTamanho",
+          "value": "20",
+          "isPath": false
+        },
+        {
+          "name": "pesquisa",
+          "value": "",
+          "isPath": false
+        }
+      ]
+    },
+    {
+      "_id": "6f280432-7cbf-45fe-b452-c29a6e142b9e",
+      "colId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+      "containerId": "",
+      "name": "criar cliente",
+      "url": "clientes",
+      "method": "POST",
+      "sortNum": 20000,
+      "created": "2024-09-04T20:39:02.544Z",
+      "modified": "2024-09-06T23:19:41.734Z",
+      "headers": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nome\": \"Maria Silva\",\n  \"cpf\": \"29966700005\",\n  \"data_nascimento\": \"1988-12-25T00:00:00\",\n  \"renda\": 400\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "bf5a6043-2149-4fe4-b2ee-457e959aa004",
+      "colId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+      "containerId": "",
+      "name": "obter cliente",
+      "url": "clientes/{id}",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2024-09-06T22:00:56.336Z",
+      "modified": "2024-09-06T23:22:09.519Z",
+      "headers": [],
+      "params": [
+        {
+          "name": "id",
+          "value": "3",
+          "isPath": true
+        }
+      ]
+    },
+    {
+      "_id": "8ef4c290-cfff-41f5-9592-97e59e813cf1",
+      "colId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+      "containerId": "",
+      "name": "remover cliente",
+      "url": "clientes/{id}",
+      "method": "DELETE",
+      "sortNum": 30000,
+      "created": "2024-09-06T22:38:19.365Z",
+      "modified": "2024-09-07T01:35:52.992Z",
+      "headers": [],
+      "params": [
+        {
+          "name": "id",
+          "value": "3",
+          "isPath": true
+        }
+      ]
+    },
+    {
+      "_id": "b04ff016-4c4d-4ab3-872c-3b3dd300f20f",
+      "colId": "b7d8904f-4816-48e9-933f-9dac5ea96387",
+      "containerId": "",
+      "name": "atualizar cliente",
+      "url": "clientes/{id}",
+      "method": "PUT",
+      "sortNum": 30000,
+      "created": "2024-09-06T22:52:24.955Z",
+      "modified": "2024-09-07T00:51:34.029Z",
+      "headers": [],
+      "params": [
+        {
+          "name": "id",
+          "value": "3",
+          "isPath": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nome\": \"Maria Silva\",\n  \"cpf\": \"53069611001\",\n  \"data_nascimento\": \"1988-12-25T00:00:00\",\n  \"renda\": 400\n}",
+        "form": []
+      }
+    }
+  ],
+  "settings": {
+    "options": {
+      "baseUrl": "http://localhost:8080/"
+    }
+  },
+  "ref": "QOT-htXyr1rWJg7QV7GgfROSj-TKCBy-SCGy2bPjwt76J_6wpqLswqu1MmEZsXxixxIBpUdiIyf-4KC4sBJrRw"
+}

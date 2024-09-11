@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+  # PostgreSQL database service
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # App service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@host.docker.internal:5432/${POSTGRES_DB}?schema=public"
+    container_name: node-app
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      SERVER_PORT: ${SERVER_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      VITE_SERVER_URL: ${VITE_SERVER_URL}
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"  # Map the environment variable for the port
+    depends_on:
+      - postgres
+
+# Volumes to persist PostgreSQL data
+volumes:
+  pgdata:
+
