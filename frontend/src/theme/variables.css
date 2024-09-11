@@ -1,0 +1,15 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+
+ion-header {
+    background: var(--ion-toolbar-background);
+}
+
+ion-header ion-progress-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
