@@ -19,7 +19,8 @@ import {
     IonSegmentButton,
     IonText,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    useIonViewWillEnter
 } from '@ionic/react';
 import { useQuery } from '@tanstack/react-query';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -44,6 +45,11 @@ const Relatorio: React.FC = () => {
         staleTime: 0,
         refetchOnWindowFocus: false,
         refetchOnReconnect: false
+    });
+
+    useIonViewWillEnter(() => {
+        maiorIdadeQuery.refetch();
+        classeQuery.refetch();
     });
 
     return (
