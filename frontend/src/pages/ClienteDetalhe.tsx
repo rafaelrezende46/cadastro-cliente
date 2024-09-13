@@ -127,7 +127,7 @@ const ClienteDetalhe: React.FC = () => {
                 <ResponsiveContainer>
                     <IonToolbar>
                         <IonButtons slot="start">
-                            <IonBackButton text="Clientes" defaultHref="/home"></IonBackButton>
+                            <IonBackButton text="voltar" defaultHref="/home"></IonBackButton>
                         </IonButtons>
                         <IonTitle>{titulo}</IonTitle>
                         <IonButtons slot="end">

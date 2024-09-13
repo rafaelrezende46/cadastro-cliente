@@ -108,6 +108,8 @@ const Home: React.FC = () => {
 
   const isMobile = useMemo(() => isPlatform('mobile'), []);
 
+  const isClientesEmptyList = clientesQuery.data?.pages[0].clientes?.length === 0;
+
   return (
     <IonPage>
       <IonLoading isOpen={removerCliente.isPending} />
@@ -127,7 +129,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <ResponsiveContainer>
           <IonToolbar>
-            <IonSearchbar placeholder="Pesquisar" debounce={300} value={pesquisa} onIonChange={onPesquisar} />
+            <IonSearchbar placeholder="Pesquisar" debounce={300} value={pesquisa} onIonChange={onPesquisar} disabled={isClientesEmptyList} />
           </IonToolbar>
 
           <ErrorMessage retry={clientesQuery.refetch} isOpen={clientesQuery.isError} />
