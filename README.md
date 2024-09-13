@@ -15,11 +15,17 @@ No arquivo .env preencha as variáveis com as credenciais que serão usadas no c
 * POSTGRES_USER
 * POSTGRES_PASSWORD
 
-Rode o comando abaixo para criar o container do Postgres no docker.
+# RODANDO O SISTEMA
+
+1. Baixe o pacote em um sistem windows.
+
+2. Rode o comando abaixo para criar o container do Postgres no docker.
 
 ```
 docker-compose up -d --build postgres
 ```
+
+Estes 2 passos sáo suficientes para que o ambiente seja instalado localmente via docker e executado normalmente.
 
 ## Backend e Frontend - Iniciar utilizando o docker
 
@@ -31,7 +37,8 @@ docker-compose up -d --build
 
 Em seguida abra a URL no navegador: http://localhost:8080
 
-## Backend - Iniciar em desenvolvimento
+
+## Iniciar em desenvolvimento - BACKEND
 
 > Não é possível rodar a backend no Docker e em modo desenvolvimento ao mesmo tempo, pois ambos os modos utilizam a mesma porta para o backend (configurada no arquivo .env).
 
@@ -61,7 +68,7 @@ Para rodar os unit tests apenas uma vez:
 npm run test
 ```
 
-## Frontend - Iniciar em desenvolvimento
+## Iniciar em desenvolvimento - FRONTEND
 
 > __Importante__: O frontend precisa que o backend já esteja rodando.
 
