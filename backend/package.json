@@ -41,6 +41,7 @@
   },
   "scripts": {
     "prismaDev": "dotenv -e ../.env prisma migrate dev",
+    "prismaDeploy": "dotenv -e ../.env prisma migrate deploy",
     "build": "tsc",
     "lint:fix": "eslint --fix --ext .js,.mjs,.ts,.json .",
     "prestart": "npm run build",

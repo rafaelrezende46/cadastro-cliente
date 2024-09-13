@@ -16,7 +16,6 @@ COPY frontend ./frontend
 # Install dependencies, run database migration and build the backend
 WORKDIR /build/backend
 RUN npm install
-RUN npm run prismaDev
 RUN npm run build
 
 # Install dependencies and build the frontend
@@ -33,6 +32,7 @@ WORKDIR /app
 # Copy backend's build output to the deploy folder
 COPY --from=build /build/backend/dist/src ./src
 COPY --from=build /build/backend/src/infra/prisma/schema.prisma ./src/infra/prisma
+COPY --from=build /build/backend/src/infra/prisma/migrations ./src/infra/prisma/migrations
 COPY --from=build /build/backend/package*.json ./
 
 # Copy frontend's build output to the deploy folder's public directory

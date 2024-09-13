@@ -42,7 +42,7 @@ Na pasta _backend_, apenas na primeira vez antes de executar o projeto, rode os 
 
 ```
 npm install
-npm run prismaDev
+npm run prismaDeploy
 ```
 
 Para iniciar o backend em modo de desenvolvimento (o servidor vai iniciar por padrão no endereço http://localhost:8080, a porta é configurável no arquivo .env):
